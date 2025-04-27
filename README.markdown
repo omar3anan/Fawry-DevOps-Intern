@@ -52,7 +52,7 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      Don't match this line
      Testing one two three
      ```
-   - **Screenshot**: ![App Screenshot](screenshots/3.png)
+   - **Screenshot**: ![App Screenshot](screenshots/6.png)
 
 4. **Inverted Match with Line Numbers**
    - **Command**: `./mygrep.sh -vn hello testfile.txt`
@@ -63,7 +63,7 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      5:Don't match this line
      6:Testing one two three
      ```
-   - **Screenshot**: ![App Screenshot](screenshots/4.png)
+   - **Screenshot**: ![App Screenshot](screenshots/3.png)
 
 5. **Missing Search String**
    - **Command**: `./mygrep.sh -v testfile.txt`
@@ -71,7 +71,7 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      ```
      Usage: ./mygrep.sh [options] search_string file_name
      ```
-   - **Screenshot**: ![App Screenshot](screenshots/5.png)
+   - **Screenshot**: ![App Screenshot](screenshots/4.png)
 
 6. **Help Flag**
    - **Command**: `./mygrep.sh --help`
@@ -82,30 +82,5 @@ Below are examples of how the script works, with screenshots to demonstrate the 
        -n   Show line numbers
        -v   Invert match
      ```
-   - **Screenshot**: ![App Screenshot](screenshots/6.png)
-
-8. **Combined Options**
-   - **Command**: `./mygrep.sh -nv hello testfile.txt`
-   - **Output**:
-     ```
-     2:This is a test
-     3:another test line
-     5:Don't match this line
-     6:Testing one two three
-     ```
-   - **Screenshot**: ![Combined Options Screenshot](path/to/combined_options_screenshot.png)
-
-9. **Case Insensitivity**
-   - **Command**: `./mygrep.sh HeLLo testfile.txt`
-   - **Output**:
-     ```
-     Hello world
-     HELLO AGAIN
-     ```
-   - **Screenshot**: ![Case Insensitivity Screenshot](path/to/case_insensitivity_screenshot.png)
-
-10. **No Matches**
-    - **Command**: `./mygrep.sh nonexistent testfile.txt`
-    - **Output**: (No output)
-    - **Screenshot**: ![No Matches Screenshot](path/to/no_matches_screenshot.png)
+   - **Screenshot**: ![App Screenshot](screenshots/5.png)
 
