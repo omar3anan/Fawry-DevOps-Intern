@@ -50,9 +50,8 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      This is a test
      another test line
      Don't match this line
-     Testing one two three
      ```
-   - **Screenshot**: ![App Screenshot](screenshots/6.png)
+   - **Screenshot**: ![App Screenshot](screenshots/7.png)
 
 4. **Inverted Match with Line Numbers**
    - **Command**: `./mygrep.sh -vn hello testfile.txt`
@@ -61,7 +60,6 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      2:This is a test
      3:another test line
      5:Don't match this line
-     6:Testing one two three
      ```
    - **Screenshot**: ![App Screenshot](screenshots/3.png)
 
