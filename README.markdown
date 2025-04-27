@@ -32,7 +32,7 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      Hello world
      HELLO AGAIN
      ```
-   - **Screenshot**: ![Basic Search Screenshot](path/to/basic_search_screenshot.png)
+   - **Screenshot**: ![App Screenshot](screenshots/1.png)
 
 2. **Search with Line Numbers**
    - **Command**: `./mygrep.sh -n hello testfile.txt`
@@ -41,7 +41,7 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      1:Hello world
      4:HELLO AGAIN
      ```
-   - **Screenshot**: ![Search with Line Numbers Screenshot](path/to/search_with_line_numbers_screenshot.png)
+   - **Screenshot**: ![App Screenshot](screenshots/2.png)
 
 3. **Inverted Match**
    - **Command**: `./mygrep.sh -v hello testfile.txt`
@@ -52,7 +52,7 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      Don't match this line
      Testing one two three
      ```
-   - **Screenshot**: ![Inverted Match Screenshot](path/to/inverted_match_screenshot.png)
+   - **Screenshot**: ![App Screenshot](screenshots/3.png)
 
 4. **Inverted Match with Line Numbers**
    - **Command**: `./mygrep.sh -vn hello testfile.txt`
@@ -63,7 +63,7 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      5:Don't match this line
      6:Testing one two three
      ```
-   - **Screenshot**: ![Inverted Match with Line Numbers Screenshot](path/to/inverted_match_with_line_numbers_screenshot.png)
+   - **Screenshot**: ![App Screenshot](screenshots/4.png)
 
 5. **Missing Search String**
    - **Command**: `./mygrep.sh -v testfile.txt`
@@ -71,17 +71,9 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      ```
      Usage: ./mygrep.sh [options] search_string file_name
      ```
-   - **Screenshot**: ![Missing Search String Screenshot](path/to/missing_search_string_screenshot.png)
+   - **Screenshot**: ![App Screenshot](screenshots/5.png)
 
-6. **Invalid File**
-   - **Command**: `./mygrep.sh hello non_existent_file.txt`
-   - **Output**:
-     ```
-     File not found: non_existent_file.txt
-     ```
-   - **Screenshot**: ![Invalid File Screenshot](path/to/invalid_file_screenshot.png)
-
-7. **Help Flag**
+6. **Help Flag**
    - **Command**: `./mygrep.sh --help`
    - **Output**:
      ```
@@ -90,7 +82,7 @@ Below are examples of how the script works, with screenshots to demonstrate the 
        -n   Show line numbers
        -v   Invert match
      ```
-   - **Screenshot**: ![Help Flag Screenshot](path/to/help_flag_screenshot.png)
+   - **Screenshot**: ![App Screenshot](screenshots/6.png)
 
 8. **Combined Options**
    - **Command**: `./mygrep.sh -nv hello testfile.txt`
@@ -117,8 +109,3 @@ Below are examples of how the script works, with screenshots to demonstrate the 
     - **Output**: (No output)
     - **Screenshot**: ![No Matches Screenshot](path/to/no_matches_screenshot.png)
 
-## How to Use This README
-
-1. Take screenshots of each test case output after running the commands above.
-2. Upload the screenshots to your GitHub repository.
-3. Replace the `path/to/...` placeholders in this README with the actual paths or URLs to your screenshots.
