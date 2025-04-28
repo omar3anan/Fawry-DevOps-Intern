@@ -1,4 +1,4 @@
-You can check the Q2 : Scenario at `theScenario` branch [here](https://github.com/omar3anan/Fawry-DevOps-Intern/tree/theScenario).
+#You can check the Q2 : Scenario at `theScenario` branch [here](https://github.com/omar3anan/Fawry-DevOps-Intern/tree/theScenario).
 # mygrep.sh - A Simplified grep-like Bash Script
 
 This Bash script, `mygrep.sh`, is a simplified version of the `grep` command. It allows users to search for a string in a text file and print matching lines, with support for options like displaying line numbers and inverting the match.
