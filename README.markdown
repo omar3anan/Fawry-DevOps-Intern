@@ -20,7 +20,7 @@ This document outlines the steps taken to troubleshoot and resolve connectivity 
         timeout was 2 seconds.
     *** UnKnown can't find internal.example.com: Non-existent domain
     ```
-  - **Screenshot: ![App Screenshot](screenshots/1.png)
+  - **Screenshot:** ![App Screenshot](screenshots/1.png)
 
 - **Check Google DNS Resolution:**
   - Command: `nslookup internal.example.com 8.8.8.8`
@@ -31,7 +31,7 @@ This document outlines the steps taken to troubleshoot and resolve connectivity 
 
     *** dns.google can't find internal.example.com: Non-existent domain
     ```
-  - **Screenshot: ![App Screenshot](screenshots/2.png)
+  - **Screenshot:** ![App Screenshot](screenshots/2.png)
 
 ### Conclusion:
 The system's DNS server (`fe80::1`) fails to resolve `internal.example.com` with a timeout, and Google’s DNS (`8.8.8.8`) returns "Non-existent domain." This suggests `internal.example.com` is likely an internal domain not registered publicly, and there may be a misconfiguration with the system's DNS server.
@@ -48,7 +48,7 @@ The system's DNS server (`fe80::1`) fails to resolve `internal.example.com` with
 - **Test HTTP Connectivity:**
   - Command: `curl -v http://192.168.1.100`
   - Hypothetical Output: `Could not connect to host` or `Connection refused`.
-  - **Screenshot: ![App Screenshot](screenshots/3.png)
+  - **Screenshot:** ![App Screenshot](screenshots/3.png)
 
 - **Test Port 80 with Telnet:**
   - Command: `telnet 192.168.1.100 80`
@@ -96,14 +96,14 @@ With DNS unresolved and connectivity tests failing on the hypothetical IP (`192.
   - **Screenshot :![App Screenshot](screenshots/6.png)
 - **Fix (Windows):**
   - Change DNS settings to use a reliable server (e.g., `192.168.1.1` or `8.8.8.8`).
-  - **Screenshot: ![App Screenshot](screenshots/7.png)
+  - **Screenshot:** ![App Screenshot](screenshots/7.png)
 
 
 ### 2. DNS Record Missing
 - **Confirmation (Windows):**
   - Command: `nslookup internal.example.com 192.168.1.1`
   - Output: "Non-existent domain."
-  - **Screenshot :![App Screenshot](screenshots/8.png)
+  - **Screenshot:** ![App Screenshot](screenshots/8.png)
 - **Fix (Windows):**
   - Contact IT to add the DNS record or use the hosts file.
 
@@ -125,7 +125,7 @@ With DNS unresolved and connectivity tests failing on the hypothetical IP (`192.
 - **Confirmation (Windows):**
   - Command: `tracert 192.168.1.100`
   - Output: Shows where the route fails.
-  - **Screenshot : ![App Screenshot](screenshots/10.png)
+  - **Screenshot:** ![App Screenshot](screenshots/10.png)
 - **Fix (Windows):**
   - Adjust network routes if necessary.
 
@@ -142,8 +142,6 @@ With DNS unresolved and connectivity tests failing on the hypothetical IP (`192.
   - Output: "Non-existent domain."
 - **Fix (Windows):**
   - Use the correct internal DNS server.
-
-
 ---
 
 ## 🏆 Bonus
@@ -156,7 +154,6 @@ With DNS unresolved and connectivity tests failing on the hypothetical IP (`192.
 - **Verification:**
   - Command: `ping internal.example.com`
   - Output: Responses from `192.168.1.100`.
-- **Screenshot 12:** Terminal showing updated `/etc/hosts` and `ping` output.
 
 ### Persist DNS Settings with `systemd-resolved` (Linux)
 - **Commands:**
@@ -167,15 +164,12 @@ With DNS unresolved and connectivity tests failing on the hypothetical IP (`192.
 - **Verification:**
   - Command: `resolvectl status`
   - Output: Lists `8.8.8.8` as the DNS server.
-- **Screenshot 13:** Terminal showing updated `resolved.conf` and `resolvectl status`.
 
 ### Windows Equivalent for Bonus
 - **Hosts File:**
   - Edit `C:\Windows\System32\drivers\etc\hosts` to add `192.168.1.100 internal.example.com`.
-  - **Screenshot 14:** Notepad showing the updated `hosts` file.
 - **Persist DNS Settings:**
   - Set DNS server in network adapter properties.
-  - **Screenshot 15:** Network adapter properties showing DNS settings.
 
 ---
 
@@ -187,8 +181,3 @@ With DNS unresolved and connectivity tests failing on the hypothetical IP (`192.
 - Updated DNS settings to use a reliable server.
 - Added a hosts file entry as a workaround.
 - Ensured firewall rules allow traffic to ports 80 and 443.
-
-**Screenshots Included:**
-- 15 screenshots as described, capturing each step and command output.
-
-**Notes:** Replace hypothetical outputs and screenshot descriptions with actual results from your environment. Submit this document with embedded or attached screenshots as required.
