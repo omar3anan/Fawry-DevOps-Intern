@@ -83,6 +83,6 @@ Below are examples of how the script works, with screenshots to demonstrate the 
      ```
    - **Screenshot**: ![App Screenshot](screenshots/5.png)
 7. ** Improve option parsing using getopts.**
-   - **Screenshot**: ![App Screenshot](screenshots/6.png)
+   - **Screenshot**: ![App Screenshot](screenshots/8.png)
 
 
