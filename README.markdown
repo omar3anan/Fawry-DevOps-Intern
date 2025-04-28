@@ -82,4 +82,7 @@ Below are examples of how the script works, with screenshots to demonstrate the 
        -v   Invert match
      ```
    - **Screenshot**: ![App Screenshot](screenshots/5.png)
+7. ** Improve option parsing using getopts.**
+   - **Screenshot**: ![App Screenshot](screenshots/6.png)
+
 
