@@ -93,7 +93,7 @@ With DNS unresolved and connectivity tests failing on the hypothetical IP (`192.
 - **Confirmation (Windows):**
   - Command: `ipconfig /all`
   - Output: Shows DNS servers, including `fe80::1` as primary.
-  - **Screenshot :![App Screenshot](screenshots/6.png)
+  - **Screenshot:** ![App Screenshot](screenshots/6.png)
 - **Fix (Windows):**
   - Change DNS settings to use a reliable server (e.g., `192.168.1.1` or `8.8.8.8`).
   - **Screenshot:** ![App Screenshot](screenshots/7.png)
