@@ -20,7 +20,7 @@ This document outlines the steps taken to troubleshoot and resolve connectivity 
         timeout was 2 seconds.
     *** UnKnown can't find internal.example.com: Non-existent domain
     ```
-  - **Screenshot 1:** Command Prompt showing the output of `nslookup internal.example.com`.
+  - **Screenshot: ![App Screenshot](screenshots/1.png)
 
 - **Check Google DNS Resolution:**
   - Command: `nslookup internal.example.com 8.8.8.8`
@@ -31,7 +31,7 @@ This document outlines the steps taken to troubleshoot and resolve connectivity 
 
     *** dns.google can't find internal.example.com: Non-existent domain
     ```
-  - **Screenshot 2:** Command Prompt showing the output of `nslookup internal.example.com 8.8.8.8`.
+  - **Screenshot: ![App Screenshot](screenshots/2.png)
 
 ### Conclusion:
 The system's DNS server (`fe80::1`) fails to resolve `internal.example.com` with a timeout, and Google’s DNS (`8.8.8.8`) returns "Non-existent domain." This suggests `internal.example.com` is likely an internal domain not registered publicly, and there may be a misconfiguration with the system's DNS server.
@@ -48,17 +48,15 @@ The system's DNS server (`fe80::1`) fails to resolve `internal.example.com` with
 - **Test HTTP Connectivity:**
   - Command: `curl -v http://192.168.1.100`
   - Hypothetical Output: `Could not connect to host` or `Connection refused`.
-  - **Screenshot 3:** Command Prompt showing the `curl` command and its output.
+  - **Screenshot: ![App Screenshot](screenshots/3.png)
 
 - **Test Port 80 with Telnet:**
   - Command: `telnet 192.168.1.100 80`
   - Hypothetical Output: `Connecting to 192.168.1.100...Could not open connection to the host, on port 80: Connect failed`.
-  - **Screenshot 4:** Command Prompt showing the `telnet` command and its output.
 
 - **Test Port 443 with PowerShell:**
   - Command: `Test-NetConnection 192.168.1.100 -Port 443`
   - Hypothetical Output: `TcpTestSucceeded: False`.
-  - **Screenshot 5:** PowerShell showing the `Test-NetConnection` command and its output.
 
 ### Conclusion:
 With DNS unresolved and connectivity tests failing on the hypothetical IP (`192.168.1.100`), the service is not reachable. The issue likely stems from DNS failure or the service not running.
@@ -95,82 +93,56 @@ With DNS unresolved and connectivity tests failing on the hypothetical IP (`192.
 - **Confirmation (Windows):**
   - Command: `ipconfig /all`
   - Output: Shows DNS servers, including `fe80::1` as primary.
-  - **Screenshot 6:** Command Prompt showing `ipconfig /all` output.
+  - **Screenshot :![App Screenshot](screenshots/6.png)
 - **Fix (Windows):**
   - Change DNS settings to use a reliable server (e.g., `192.168.1.1` or `8.8.8.8`).
-  - **Screenshot 7:** Network adapter properties showing updated DNS settings.
-- **Linux Command (for reference):**
-  ```
-  sudo echo "nameserver 8.8.8.8" > /etc/resolv.conf
-  ```
+  - **Screenshot: ![App Screenshot](screenshots/7.png)
+
 
 ### 2. DNS Record Missing
 - **Confirmation (Windows):**
   - Command: `nslookup internal.example.com 192.168.1.1`
   - Output: "Non-existent domain."
-  - **Screenshot 8:** Command Prompt showing `nslookup` output.
+  - **Screenshot :![App Screenshot](screenshots/8.png)
 - **Fix (Windows):**
   - Contact IT to add the DNS record or use the hosts file.
-- **Linux Command (for reference):**
-  ```
-  sudo echo "192.168.1.100 internal.example.com" >> /etc/hosts
-  ```
+
 
 ### 3. Firewall Blocking Ports
 - **Confirmation (Windows):**
   - Check Windows Firewall settings.
-  - **Screenshot 9:** Windows Firewall settings window.
 - **Fix (Windows):**
   - Allow ports 80 and 443 in Windows Firewall.
-- **Linux Command (for reference):**
-  ```
-  sudo ufw allow 80/tcp
-  sudo ufw allow 443/tcp
-  ```
+
 
 ### 4. Service Not Running
 - **Confirmation (Windows):**
   - If server access is available, check service status.
 - **Fix (Windows):**
   - Start the web service (e.g., IIS).
-- **Linux Command (for reference):**
-  ```
-  sudo systemctl start apache2
-  ```
 
 ### 5. Network Routing Issues
 - **Confirmation (Windows):**
   - Command: `tracert 192.168.1.100`
   - Output: Shows where the route fails.
-  - **Screenshot 10:** Command Prompt showing `tracert` output.
+  - **Screenshot : ![App Screenshot](screenshots/10.png)
 - **Fix (Windows):**
   - Adjust network routes if necessary.
-- **Linux Command (for reference):**
-  ```
-  sudo ip route add 192.168.1.0/24 via 192.168.1.1
-  ```
+
 
 ### 6. Client-Side Firewall
 - **Confirmation (Windows):**
   - Check outbound rules in Windows Firewall.
 - **Fix (Windows):**
   - Allow outbound traffic to ports 80 and 443.
-- **Linux Command (for reference):**
-  ```
-  sudo ufw allow out to any port 80 proto tcp
-  ```
 
 ### 7. Domain Intended as Internal
 - **Confirmation (Windows):**
   - Command: `nslookup internal.example.com 8.8.8.8`
   - Output: "Non-existent domain."
-  - **Screenshot 11:** Command Prompt showing `nslookup` output.
 - **Fix (Windows):**
   - Use the correct internal DNS server.
-- **Linux Command (for reference):**
-  ```
-  sudo echo "nameserver 192.168.1.10" > /etc/resolv.conf
-  ```
+
 
 ---
 
